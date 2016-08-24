@@ -22,19 +22,19 @@ A basic build system was provided that bases on NPM scripts. Here's what's avail
 Install dependencies
 
 `
-  npm install
+npm install
 `
 
-Build the project and run dev server on localhost:3000
+Build the project's JS & CSS files into `./dist` directory
 
 `
-  npm run build
+npm run build
 `
 
-Start SASS & JS watchers and run dev server on localhost:3000
+Build the project's JS & CSS files into `./dist` directory and run dev server on `localhost:3000`
 
 `
-  npm run watch
+npm run watch
 `
 
 ### API
