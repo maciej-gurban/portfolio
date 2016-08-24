@@ -1,0 +1,43 @@
+// Component - Product
+$card-product: 160px;
+$card-caption:  22px;
+$card-padding: $margin-small;
+$card-border:  1px solid $color-shade;
+
+.ad {
+  text-align: center;
+  margin-bottom: $card-padding;
+}
+
+.card {
+  background: $color-foreground;
+  border: $card-border;
+  height: $card-product + $card-padding * 2 + $card-caption * 2;
+  margin-bottom: 10px;
+
+  .card--product {
+    .card--product-inner {
+      white-space: nowrap;
+    }
+    text-align: center;
+    height: $card-product;
+    line-height: $card-product;
+
+    // Overflows prevent large ascii faces from breaking the layout
+    overflow-x: auto;
+    overflow-y: hidden;
+    vertical-align: middle;
+  }
+  .card--caption {
+    border-top: $card-border;
+    padding: $card-padding;
+
+    .card--caption--added,
+    .card--caption--price {
+      @include text(normal);
+
+      height: $card-caption;
+      line-height: $card-caption;
+    }
+  }
+}

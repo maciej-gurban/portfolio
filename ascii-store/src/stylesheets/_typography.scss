@@ -1,0 +1,18 @@
+// Typography
+
+$text-sizes: (
+  small:  11px,
+  normal: 15px,
+  big:    18px
+);
+
+$line-height-factor: 1.45;
+
+@function font-size($size) {
+  @return map-get($text-sizes, $size);
+}
+
+@mixin text($size) {
+  font-size:   font-size($size);
+  line-height: font-size($size) * $line-height-factor;
+}

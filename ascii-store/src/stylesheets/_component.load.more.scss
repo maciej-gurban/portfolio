@@ -1,0 +1,27 @@
+$size: 100px;
+
+@mixin circular-button($size) {
+  background: $color-primary;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+
+  height: $size;
+  letter-spacing: 2px;
+  line-height: $size;
+  margin: $margin-medium auto;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease;
+  width: $size;
+  vertical-align: middle;
+
+  &:hover {
+    background: darken($color-primary, 20%);
+  }
+}
+
+.load-more {
+  @include circular-button($size);
+}

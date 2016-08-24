@@ -1,0 +1,61 @@
+// Layout
+$breakpoints: (
+  small:  0,
+  medium: 680px,
+  large:  1200px
+);
+
+$gutter: 10px;
+$side-margin: $gutter/2;
+
+// Grid element wrapper
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Styles are inherited from the smallest screen up
+// For exceptional cases, use @media min-width and max-width directly
+@mixin screen($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: #{map-get($breakpoints, $size)}) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{size} not found in '$breakpoints'";
+  }
+}
+
+.grid-container {
+  @include clearfix();
+
+  padding-left:  $side-margin;
+  padding-right: $side-margin;
+
+  &.centered-narrow {
+    max-width: map-get($breakpoints, large);
+    margin: 0 auto;
+  }
+
+  .grid-item {
+    float: left;
+    padding-left:  $side-margin;
+    padding-right: $side-margin;
+    width: 100%;
+
+    &.one-of-four {
+      @include screen(small) {
+        width: 100%;
+      }
+      @include screen(medium) {
+        width: 25%;
+      }
+    }
+  }
+}
