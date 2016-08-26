@@ -4,6 +4,5 @@
       "./dist/**/*.css",
       "./dist/**/*.js"
     ],
-    "server" : { "baseDir" : "./dist" },
-    "browser" : ["google-chrome"]
+    "server" : { "baseDir" : "./dist" }
 }
